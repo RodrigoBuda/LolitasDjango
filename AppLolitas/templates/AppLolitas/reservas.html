@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Reservas</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'AppLolitas/iconos/fontawesome/css/all.css' %}"
+    />
+
+    <link rel="stylesheet" href="{% static 'AppLolitas/css/index.css' %}" />
+  </head>
+  <body>
+    <div class="cont-wp-sup">
+      <a
+        href="https://wa.me/+5491169825561"
+        class="icono-wp-superior"
+        aria-label="icwp"
+        target="_blank"
+        ><i class="fa-brands fa-whatsapp wp-sup"></i
+      ></a>
+    </div>
+    <header>
+      <section id="inicio">
+        <!-- Menu de bootstrap-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navMenu">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}"
+              ><img
+                class="logopng"
+                src="{% static 'AppLolitas/img/logopng.png' %}"
+                alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon rayitas"></span>
+            </button>
+            <div class="nav-cont">
+              <div
+                class="collapse navbar-collapse nav-cont"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="{% url 'index' %}"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'sobre_nosotros' %}"
+                      >Sobre nosotras</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'servicios' %}"
+                      >Servicios</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}#contacto"
+                      >Contacto</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li-tyc" href="#tyc">
+                      <b> Terminos y condiciones</b></a
+                    >
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid fa-user logo-iniciar-sesion"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      {% if user.is_authenticated %}
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'cerrar_sesion' %}"
+                          >Cerrar Sesion</a
+                        >
+                      </li>
+                      {% else %}
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'iniciar_sesion' %}"
+                          >Iniciar Sesion</a
+                        >
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a class="dropdown-item" href="{% url 'registro' %}"
+                          >Crear Usuario</a
+                        >
+                      </li>
+                      {% endif %}
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </section>
+    </header>
+
+    <main></main>
+
+    <footer>
+      <section id="menu-final">
+        <div class="cont-lista-logo">
+          <ul class="lista_final">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'index' %}"
+                ><b> Inicio</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'sobre_nosotros' %}">
+                <b> Sobre nosotras</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'servicios' %}">
+                <b> Servicios</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}#contacto"
+                ><b> Contacto</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li-tyc-final" href="./tyc.html"
+                ><b> Terminos y condiciones</b></a
+              >
+            </li>
+          </ul>
+          <img
+            class="logo-final"
+            src="{% static 'AppLolitas/img/logopng.png' %}"
+            alt=""
+          />
+        </div>
+      </section>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

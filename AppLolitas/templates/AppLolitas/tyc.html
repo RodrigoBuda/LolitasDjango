@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Terminos y condiciones</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'AppLolitas/iconos/fontawesome/css/all.css' %}"
+    />
+
+    <link rel="stylesheet" href="{% static 'AppLolitas/css/index.css' %}" />
+    <link
+      rel="icon"
+      type="image/jpg"
+      href="{% static 'AppLolitas/img/lolitaspng.png' %}"
+    />
+  </head>
+  <body>
+    <div class="cont-wp-sup">
+      <a
+        href="https://wa.me/+5491169825561"
+        class="icono-wp-superior"
+        aria-label="icwp"
+        target="_blank"
+        ><i class="fa-brands fa-whatsapp wp-sup"></i
+      ></a>
+    </div>
+    <header>
+      <section id="inicio">
+        <!-- Menu de bootstrap-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navMenu">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}"
+              ><img
+                class="logopng"
+                src="{% static 'AppLolitas/img/logopng.png' %}"
+                alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon rayitas"></span>
+            </button>
+            <div class="nav-cont">
+              <div
+                class="collapse navbar-collapse nav-cont"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link li-efecto"
+                      aria-current="page"
+                      href="{% url 'index' %}"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link li-efecto"
+                      href="{% url 'sobre_nosotros' %}"
+                      >Sobre nosotras</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li-efecto" href="{% url 'servicios' %}"
+                      >Servicios</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link li-efecto"
+                      href="{% url 'index' %}#contacto"
+                      >Contacto</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li-menu" href="#tyc">
+                      <b> Terminos y condiciones</b></a
+                    >
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid fa-user logo-iniciar-sesion"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      {% if user.is_authenticated %}
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'cerrar_sesion' %}"
+                          >Cerrar Sesion</a
+                        >
+                      </li>
+                      {% else %}
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'iniciar_sesion' %}"
+                          >Iniciar Sesion</a
+                        >
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a class="dropdown-item" href="{% url 'registro' %}"
+                          >Crear Usuario</a
+                        >
+                      </li>
+                      {% endif %}
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </section>
+    </header>
+
+    <section id="sec-tyc">
+      <div class="cont-sec-tyc">
+        <h2>Sobre cancelaciones</h2>
+
+        <p>
+          La cancelación de un turno debe hacerse con
+          <b> 48 horas habiles de anticipación</b> sin excepción. En el caso de
+          que sea menor a ese lapso de tiempo se perderá la seña.
+          <b>Si la cancelación es el mismo dia de la sesión</b> se deberá abonar
+          aparte de la seña el 100% del valor del tratamiento en el próximo
+          turno o nos reservaremos el derecho a otorgar un nuevo horario.
+        </p>
+
+        <p>
+          En el caso de cancelar con más de 48hs de anticipación
+          <b> tres veces seguidas</b> la seña se perderá. En el caso de las
+          cancelaciones con más de 48 horas hábiles, se podrá reprogramar el
+          turno y quedará la seña a favor para un próximo turno que deberán
+          encontrar en la web dependiendo de la disponibilidad, pero no se podrá
+          realizar la devolución de la misma.
+        </p>
+
+        <p>
+          En el caso de que el turno sea cancelado por nosotros por motivos
+          personales o de la situación del país, se tratará de ubicar lo mas
+          pronto posible el mismo. Al agendar un turno damos por sentado que se
+          leyeron y aceptaron estos términos y condiciones. Nos reservamos el
+          derecho de admisión ante innumerables cancelaciones.
+        </p>
+      </div>
+    </section>
+    <footer>
+      <section id="menu-final">
+        <div class="cont-lista-logo">
+          <ul class="lista_final">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'index' %}"
+                ><b> Inicio</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'sobre_nosotros' %}">
+                <b> Sobre nosotras</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'servicios' %}">
+                <b> Servicios</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}#contacto"
+                ><b> Contacto</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li-tyc-final" href="#inicio"
+                ><b> Terminos y condiciones</b></a
+              >
+            </li>
+          </ul>
+          <img
+            class="logo-final"
+            src="{% static 'AppLolitas/img/logopng.png' %}"
+            alt=""
+          />
+        </div>
+      </section>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

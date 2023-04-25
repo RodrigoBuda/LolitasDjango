@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <title>Lolita's</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'AppLolitas/iconos/fontawesome/css/all.css' %}"
+    />
+
+    <link rel="stylesheet" href="{% static 'AppLolitas/css/index.css' %}" />
+    
+
+    <link rel="icon" type="image/jpg" href="{% static 'AppLolitas/img/lolitaspng.png' %}" />
+  </head>
+  <body>
+    <div class="div-body">
+    <header>
+      
+      <section id="inicio">
+        <!-- Menu de bootstrap-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navMenu">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}"
+              ><img class="logopng" src="{% static 'AppLolitas/img/logopng.png' %}" alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon rayitas"></span>
+            </button>
+            <div class="nav-cont">
+              <div
+                class="collapse navbar-collapse float-end nav-cont"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link li-menu"
+                      aria-current="page"
+                      href="{% url 'index' %}"
+                      
+                      ><b> Inicio</b></a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      class="nav-link li-efecto"
+                      href="{% url 'sobre_nosotros' %}"
+                      >Sobre nosotras</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li-efecto" href="{% url 'servicios' %}"
+                      >Servicios</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li-efecto" href="#contacto">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li-efecto" href="{% url 'tyc' %}"
+                      >Terminos y condiciones</a
+                    >
+                  </li>
+                  <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user logo-iniciar-sesion"></i>
+          </a>
+          <div class="cont-submenu">
+          <ul class="dropdown-menu">
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar Sesion</a></li>
+            {% else %}
+            <li class="nav-item"><a class="dropdown-item" href="{% url 'iniciar_sesion' %}">Iniciar Sesion</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="nav-item"><a class="dropdown-item" href="{% url 'registro' %}">Crear Usuario</a></li>
+            {% endif %}
+          </ul>
+        </li>
+        </div>
+
+                 
+                     
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </section>
+    </header>
+  <main>
+    <section id="sobreMi">
+      <div class="cont-sobreMi">
+        <h2>Lolita's Beauty Center</h2>
+
+        <p>
+          Bienvenidas a Lolita's! Especialistas en miradas. Queremos que tu
+          mirada brille, enamore y que te sientas a gusto con vos misma.
+        </p>
+      </div>
+    </section>
+    <section id="servicios">
+      <div class="cont-tit-nuestrosServicios">
+        <div class="separador-izq"></div>
+        <h2 class="tit-nuestrosServicios">Nuestros servicios</h2>
+        <div class="separador-der"></div>
+      </div>
+      <div class="contIndexServ"></div>
+      
+        <a class="a-verMas" href="{% url 'servicios' %}"><button class="boton-verMas" type="button"> <b> Ver Mas</b></button></a>
+      
+    </div>
+    </section>
+
+    <section id="turnos">
+      <div class="cont-turnos">
+        <h3><b> Reserva tu turno con nosotras</b></h3>
+        <a href="#"
+          ><i class="fa-solid fa-calendar-days icono-calendario iconos"></i
+        ></a>
+      </div>
+    </section>
+
+    <div class="div-sep"></div>
+
+    <section id="contacto">
+      <div class="cont-contacto">
+        <h3><b>Nuestro Whatsapp</b></h3>
+        <a href="https://wa.me/+5491169825561" aria-label="icwp" target="_blank"
+          ><i class="fa-brands fa-whatsapp icono-wp iconos"></i
+        ></a>
+      </div>
+
+      <div class="cont-redes">
+        <h3><b>Nuestras redes</b></h3>
+        <a
+          href="https://www.instagram.com/lolita.sbeauty/?hl=es-la"
+          aria-label="insta"
+          target="_blank"
+        >
+          <i class="fa-brands fa-instagram icono-insta iconos"></i
+        ></a>
+        <a
+          href="https://www.facebook.com/lolitas.FG/"
+          aria-label="face"
+          target="_blank"
+        >
+          <i class="fa-brands fa-facebook icono-face iconos"></i
+        ></a>
+      </div>
+
+      <div class="cont-mail">
+        <h3><b>E-mail</b></h3>
+        <a href="mailto: lolitas@hotmail.com" aria-label="icono">
+          <i class="fa-regular fa-envelope iconos"></i>
+        </a>
+        <p>lolitas@hotmail.com</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+      <section id="menu-final">
+        <div class="cont-lista-logo">
+          <ul class="lista_final">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#inicio"
+                ><b> Inicio</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'sobre_nosotros' %}">
+                <b> Sobre mi</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'servicios' %}"> <b> Servicios</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto"><b> Contacto</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'tyc' %}"
+                ><b> Terminos y condiciones</b></a
+              >
+            </li>
+          </ul>
+          <img class="logo-final" src="{% static 'AppLolitas/img/logopng.png' %}" alt="" />
+        </div>
+      </section>
+      <div class="cont-wp-sup">
+        <a
+          href="https://wa.me/+5491169825561"
+          class="icono-wp-superior"
+          aria-label="icwp"
+          target="_blank"
+          ><i class="fa-brands fa-whatsapp wp-sup"></i
+        ></a>
+      </div>
+  </footer>
+    <script type="module" src="../../static/AppLolitas/js/index.js"></script>
+    <script type="module" src="../../static/AppLolitas/js/data.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    </div>
+  </body>
+</html>
