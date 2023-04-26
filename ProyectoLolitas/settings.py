@@ -149,3 +149,4 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+WHITENOISE_ROOT = os.path.join(BASE_DIR, 'AppLolitas/static')
