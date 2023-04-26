@@ -16,7 +16,14 @@ from django.db import IntegrityError
 
 
 def index(request):
-    return render(request, 'AppLolitas/index.html')
+    context = {
+        'active_page': 'inicio'
+    }
+    return render(request, 'AppLolitas/index.html', context)
+
+
+def base(request):
+    return render(request, 'AppLolitas/base.html')
 
 
 def servicio(request):
@@ -24,15 +31,24 @@ def servicio(request):
 
 
 def servicios(request):
-    return render(request, 'AppLolitas/servicios.html')
+    context = {
+        'active_page': 'servicios'
+    }
+    return render(request, 'AppLolitas/servicios.html', context)
 
 
-def sobre_nosotros(request):
-    return render(request, 'AppLolitas/sobre_nosotros.html')
+def sobre_nosotras(request):
+    context = {
+        'active_page': 'sobre_nosotras'
+    }
+    return render(request, 'AppLolitas/sobre_nosotras.html', context)
 
 
 def tyc(request):
-    return render(request, 'AppLolitas/tyc.html')
+    context = {
+        'active_page': 'tyc'
+    }
+    return render(request, 'AppLolitas/tyc.html', context)
 
 
 def registro(request):

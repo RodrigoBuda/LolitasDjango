@@ -103,7 +103,7 @@ p {
   --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
-.li-menu {
+.active {
   background-color: var(--colorPrincipal);
   border-radius: 4px;
   width: 100%;
