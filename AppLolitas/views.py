@@ -107,3 +107,8 @@ def cerrar_sesion(request):
 def reservas(request):
 
     return render(request, 'AppLolitas/reservas.html')
+
+
+@login_required
+def carrito(request):
+    return render(request, 'AppLolitas/carrito.html')

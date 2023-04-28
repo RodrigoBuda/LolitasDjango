@@ -378,6 +378,9 @@ ul {
   .cont-form form {
     max-width: 50%;
   }
+  .cont-form-iniciar form {
+    max-width: 50%;
+  }
 }
 
 /* --------------   FIN DE INDEX  -------------------*/
@@ -591,6 +594,24 @@ ul {
   border-top: 2px solid rgba(60, 60, 60, 0.2);
 }
 .cont-form form {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(60, 60, 60, 0.2);
+  border-radius: 10px;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* -------- INICIAR SESION --------- */
+
+.cont-form-iniciar {
+  height: auto;
+  padding: 30px;
+  margin: auto;
+  width: 100%;
+  border-top: 2px solid rgba(60, 60, 60, 0.2);
+}
+.cont-form-iniciar form {
   border: 2px solid rgba(0, 0, 0, 0.5);
   background-color: rgba(60, 60, 60, 0.2);
   border-radius: 10px;

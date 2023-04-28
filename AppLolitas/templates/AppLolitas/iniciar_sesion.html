@@ -2,11 +2,28 @@
 <title>Iniciar Sesion</title>
 {% endblock tit %} {% block contenido %}
 <main>
-  {{error}}
-  <form style="margin: 200px 70px" action="" method="POST">
-    {% csrf_token %} {{form.as_p}}
-    <button>Iniciar Sesion</button>
-  </form>
+  <div class="cont-form-iniciar">
+    <form action="" method="POST">
+      <h3 class="tit-registro">Iniciar Sesion</h3>
+      {{error}} {% csrf_token %} 
+      <div class="cont-registro">
+      <div class="cont-reg">
+          <label class="label-registro" for="id_username">Usuario</label>
+          <input type="text" name="username" autofocus autocapitalize="none" autocomplete?"username" maxlength="150" required id="id_username">
+      </div>
+
+      <div class="cont-reg">
+        <label class="label-registro" for="id_password">Contraseña</label>
+        <input type="password" name="password" autocomplete="current-password" required id="id_password"></input>
+      </div>
+
+      </div>
+
+      <div class="btn-crear-cuenta">
+      <button class="btn boton">Iniciar Sesion</button>
+      </div>
+    </form>
+  </div>
 </main>
 {% endblock contenido %} {% block scripts %}
 <script
