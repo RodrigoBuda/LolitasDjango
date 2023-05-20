@@ -2,11 +2,17 @@
 <title>Perfil</title>
 {% endblock tit %} {% block contenido %}
 <main>
-  <h1
-    style="margin: 150px 10px 150px; display: flex; height: 100px; width: auto"
-  >
-    ACA VA EL PERFIL REGISTRADO
-  </h1>
+  <div class="card">
+    <div class="cont-perfil">
+      <h1 class="tit-perfil">Mi Perfil</h1>
+      <h2 class="perfil-username">Usuario: {{user.username}}</h2>
+      <h2 class="perfil-nombre">Nombre: {{user.first_name}}</h2>
+      <h3>
+        Ir a mi carrito
+        <a class="carrito-perfil" href="{% url 'carrito' %}">🛒</a>
+      </h3>
+    </div>
+  </div>
 </main>
 {% endblock contenido %} {% block scripts %}
 

@@ -1,11 +1,19 @@
-import { services } from "./data.js";
 const contIndexServ = document.querySelector(".contIndexServ");
+
+const fetchData = async () => {
+  const response = await fetch("../js/data.json");
+  const data = await response.json();
+  console.log(data);
+
+  contIndexServ.innerHTML = TresServicios(data);
+};
+
+fetchData();
 
 function TresServicios(servicios) {
   let tarjetas = "";
   for (const s of servicios.slice(0, 3)) {
     tarjetas += `
-        
       <div style="background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.5),
@@ -30,5 +38,3 @@ function TresServicios(servicios) {
   }
   return tarjetas;
 }
-
-contIndexServ.innerHTML = TresServicios(services);

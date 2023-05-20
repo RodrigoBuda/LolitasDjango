@@ -1,9 +1,17 @@
-import { services } from "./data.js";
 const contServicios = document.getElementById("contServicios");
 
-function mostrarServicios(servicios) {
+const fetchData = async () => {
+  const response = await fetch("../js/data.json");
+  const data = await response.json();
+  console.log(data);
+
+  actualizarServicios(data);
+};
+fetchData();
+
+function mostrarServicios(data) {
   let tarjetas = "";
-  for (const s of servicios) {
+  for (const s of data) {
     tarjetas += `
          <div class="card">
          <div class="cont-img-servicios">
@@ -27,5 +35,3 @@ function mostrarServicios(servicios) {
 function actualizarServicios(servicios) {
   contServicios.innerHTML = mostrarServicios(servicios);
 }
-
-actualizarServicios(services);

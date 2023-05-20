@@ -78,13 +78,20 @@ p {
   font-size: 30px;
   margin-left: 15px;
 }
+.a-submenu {
+  text-align: start;
+  padding-left: 0;
+}
+
 .nav-item {
   text-align: center;
   margin: auto 8px;
 }
+
 .dropdown {
   margin-right: 75px;
   text-align: center;
+  min-width: 5rem;
 }
 
 @media only screen and (max-width: 991px) {
@@ -94,6 +101,10 @@ p {
     align-items: center;
   }
   .dropdown {
+    margin: auto;
+  }
+  .dropdown-item {
+    text-align: center;
     margin: auto;
   }
 }
@@ -119,6 +130,12 @@ header nav {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.ic-carrito {
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
 }
 
 #contServicio {
@@ -316,6 +333,7 @@ ul {
   .card {
     width: 500px;
     margin: 20px auto;
+    max-width: 300px;
   }
 }
 /*--------------MAS DE 990PX--------------*/
@@ -365,8 +383,8 @@ ul {
     transition: color 0.5s ease;
   }
   .boton:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-
+    background-color: rgba(60, 60, 60);
+    color: var(--colorSecundario);
     outline: 2px solid var(--colorSecundario);
     transition: background-color 0.5s ease;
   }
@@ -374,6 +392,7 @@ ul {
   /*--------------MAS DE 990PX-servicios--------------*/
   .card {
     width: 30%;
+    max-width: 300px;
   }
   .cont-form form {
     max-width: 50%;
@@ -618,4 +637,92 @@ ul {
   margin: auto;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+/*--------PERFIL----------*/
+.cont-perfil {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin: 20px;
+  min-height: 400px;
+  justify-content: space-between;
+}
+.carrito-perfil {
+  text-decoration: none;
+  color: aliceblue;
+}
+.carrito-perfil:hover {
+}
+
+/*--------TIENDA--------*/
+.cont-tienda {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cont-tienda .card {
+  height: 500px;
+}
+
+.tit-tienda {
+  background: var(--colorPrincipal);
+  padding: 15px;
+
+  text-align: center;
+}
+.cont-img-productos img {
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 1s ease;
+}
+.cont-img-productos {
+  display: flex;
+  width: auto;
+  height: 50%;
+  overflow: hidden;
+  justify-content: center;
+  border-radius: 10px;
+}
+.cont-tienda .card .card-body {
+}
+
+.cont-btns-tienda {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.cont-btns-tienda button {
+  padding: 4px;
+  margin: 5px 0px;
+}
+
+/*--------- TIENDA - MENOS DE 990PX----------------*/
+@media only screen and (max-width: 991px) {
+  .cont-tienda {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+  }
+  .cont-tienda .card {
+    margin: 20px 12px;
+    max-width: 300px;
+  }
+}
+
+/*----------- CREAR_PRODUCTO --------------*/
+
+.tit-crear-producto {
+  background: var(--colorPrincipal);
+  padding: 15px;
+
+  text-align: center;
 }

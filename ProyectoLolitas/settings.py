@@ -142,9 +142,11 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
 STATICFILES_DIRS = [
-    BASE_DIR / "AppLolitas/static/AppLolitas",
+    BASE_DIR / "AppLolitas/static/AppLolitas/img",
 ]
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 WHITENOISE_ROOT = os.path.join(BASE_DIR, 'AppLolitas/static/AppLolitas')
